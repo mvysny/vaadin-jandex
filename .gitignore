@@ -1,0 +1,11 @@
+.idea
+build
+.gradle
+classes
+local.properties
+styles.css
+styles.css.gz
+*.iml
+out
+.attach_pid*
+target
