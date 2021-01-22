@@ -6,12 +6,12 @@
 
     <groupId>com.github.mvysny.vaadin-jandex</groupId>
     <artifactId>vaadin-jandex</artifactId>
-    <version>14.4.6-SNAPSHOT</version>
+    <version>14.4.6</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <vaadin.version>14.4.6</vaadin.version>
+        <vaadin.version>${project.version}</vaadin.version>
     </properties>
     <dependencyManagement>
         <dependencies>
