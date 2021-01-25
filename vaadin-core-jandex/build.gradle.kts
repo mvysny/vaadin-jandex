@@ -8,3 +8,6 @@ dependencies {
             .forEach { exclude(group = it) }
     }
 }
+
+val configureBintray = ext["configureBintray"] as (artifactId: String) -> Unit
+configureBintray("vaadin-core-jandex")
