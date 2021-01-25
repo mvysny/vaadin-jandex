@@ -19,9 +19,22 @@ Browse the [vaadin-jandex on Maven Central](https://repo1.maven.org/maven2/com/g
 to see versions available. The vaadin-jandex library tracks Vaadin's release versioning;
 simply use the same vaadin-jandex as is your Vaadin version.
 
+In order to add Vaadin Jandex index to your app, simply add the
+following dependency into your project:
+
+```xml
+<dependency>
+  <groupId>com.github.mvysny.vaadin-jandex</groupId>
+  <artifactId>vaadin-jandex</artifactId>
+  <version>14.4.6</version>
+</dependency>
+```
+
+(or use `vaadin-core-jandex` if you're only using vaadin-core components).
+
 ## How to build a custom version
 
-1. git clone the project
+1. git clone this project
 2. Edit `gradle.properties` and modify the Vaadin version to the version of your choice, e.g. 14.4.6.
 3. Run `./gradlew publishToMavenLocal`. The library is now installed in your local repo.
 4. git clone https://github.com/mvysny/vaadin-quarkus
@@ -34,6 +47,8 @@ simply use the same vaadin-jandex as is your Vaadin version.
   <version>14.4.6</version>
 </dependency>
 ```
+
+(or use `vaadin-core-jandex` if you're only using vaadin-core components).
 
 6. Edit the vaadin-quarkus's `application.properties` and delete all Vaadin-related
    `.index-dependency.` lines.
