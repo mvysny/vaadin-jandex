@@ -14,7 +14,7 @@ defaultTasks("clean", "build")
 
 allprojects {
     group = "com.github.mvysny.vaadin-jandex"
-    version = "14.4.6-SNAPSHOT"
+    version = "${properties["vaadin_version"]}-SNAPSHOT"
 
     repositories {
         jcenter()
@@ -31,7 +31,7 @@ subprojects {
 
     val unzip by tasks.registering(Copy::class) {
         into(File(project.buildDir, "dependencies"))
-        configurations.runtimeClasspath.get()
+        configurations.compileOnly.get()
             .files { it.group == "com.vaadin" }
             .forEach { depJar ->
                 from(zipTree(depJar))
