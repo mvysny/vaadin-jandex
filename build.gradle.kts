@@ -1,12 +1,12 @@
 import org.kordamp.gradle.plugin.jandex.tasks.JandexTask
 
 plugins {
-    id("org.kordamp.gradle.jandex") version "0.9.0"
+    id("org.kordamp.gradle.jandex") version "0.9.0" apply false
 }
 
 defaultTasks("clean", "build")
 
-allprojects {
+subprojects {
     apply {
         plugin("org.kordamp.gradle.jandex")
     }
@@ -17,7 +17,7 @@ allprojects {
 
     val unzip by tasks.registering(Copy::class) {
         into(File(project.buildDir, "dependencies"))
-        configurations.runtimeClasspath.get()
+        configurations.named<Configuration>("runtimeClasspath").get()
             .files { it.group == "com.vaadin" }
             .forEach { depJar ->
                 from(zipTree(depJar))
