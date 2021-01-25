@@ -1,3 +1,5 @@
+import org.kordamp.gradle.plugin.jandex.tasks.JandexTask
+
 plugins {
     id("org.kordamp.gradle.jandex") version "0.9.0"
 }
@@ -28,7 +30,7 @@ val unzip by tasks.registering(Copy::class) {
         }
 }
 
-(tasks.getByPath("jandex") as org.kordamp.gradle.plugin.jandex.tasks.JandexTask).apply {
+tasks.withType(JandexTask::class).configureEach {
     dependsOn(unzip)
     sources.from(File(project.buildDir, "dependencies/com/vaadin/flow"))
 }
