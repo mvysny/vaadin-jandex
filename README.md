@@ -1,5 +1,7 @@
 # vaadin-jandex
 
+> Work on this project has been kindly sponsored by [Inacta AG](https://inacta.ch).
+
 Builds the Jandex index of all Vaadin core libraries. This enables Vaadin-based
 apps to run on top of Quarkus+Undertow.
 
