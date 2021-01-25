@@ -21,11 +21,11 @@ dependencies {
 
 val unzip by tasks.registering(Copy::class) {
     into(File(project.buildDir, "dependencies"))
-    configurations.runtimeClasspath.resolve().forEach { depJar ->
-        if (depJar.absolutePath.contains("/com.vaadin/")) {
+    configurations.runtimeClasspath.get()
+        .files { it.group == "com.vaadin" }
+        .forEach { depJar ->
             from(zipTree(depJar))
         }
-    }
 }
 
 (tasks.getByPath("jandex") as org.kordamp.gradle.plugin.jandex.tasks.JandexTask).apply {
