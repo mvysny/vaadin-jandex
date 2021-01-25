@@ -3,7 +3,17 @@
 Builds the Jandex index of all Vaadin core libraries. This enables Vaadin-based
 apps to run on top of Quarkus+Undertow.
 
+There are two artifacts built:
+
+* [vaadin-core-jandex](vaadin-core-jandex) builds the Jandex index for `vaadin-core` (only
+  the open-source components)
+* [vaadin-jandex](vaadin-jandex) builds the Jandex index for `vaadin`
+  (both the open-source components and the pro components such as Board, GridPro,
+  CRUD etc).
+
 ## How to use
+
+TODO modify to Gradle
 
 1. git clone the project
 2. Edit `pom.xml` and modify the Vaadin version to the version of your choice.
