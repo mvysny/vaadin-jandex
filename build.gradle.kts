@@ -41,7 +41,7 @@ subprojects {
 
     tasks.withType(JandexTask::class).configureEach {
         dependsOn(unzip)
-        sources.from(File(project.buildDir, "dependencies/com/vaadin/flow"))
+        sources.from(File(project.buildDir, "dependencies/com/vaadin"))
     }
 
     tasks.withType<Test> {

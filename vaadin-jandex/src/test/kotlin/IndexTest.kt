@@ -30,6 +30,9 @@ class IndexTest : DynaTest({
         expect(1, components.toString()) {
             components.filter { it.simpleName() == "GeneratedVaadinButton" } .size
         }
+        expect(1, components.toString()) {
+            components.filter { it.simpleName() == "VaadinCoreShrinkWrap" } .size
+        }
     }
 
     test("find all @WebListener") {
