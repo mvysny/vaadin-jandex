@@ -13,6 +13,10 @@ There are two artifacts built:
   (both the open-source components and the pro components such as Board, GridPro,
   CRUD etc).
 
+## Example
+
+See the [vaadin-quarkus](https://github.com/mvysny/vaadin-quarkus) example app for more details.
+
 ## Available on JCenter and Maven Central
 
 Browse the [vaadin-jandex on Maven Central](https://repo1.maven.org/maven2/com/github/mvysny/vaadin-jandex/)
@@ -36,9 +40,9 @@ following dependency into your project:
 
 1. git clone this project
 2. Edit `gradle.properties` and modify the Vaadin version to the version of your choice, e.g. 14.4.6.
-3. Run `./gradlew publishToMavenLocal`. The library is now installed in your local repo.
-4. git clone https://github.com/mvysny/vaadin-quarkus
-5. Modify the vaadin-quarkus's `pom.xml` and add the dependency on this library:
+3. Edit `build.gradle.kts` and set the version line to `version = "${properties["vaadin_version"]}"` (get rid of the -SNAPSHOT suffix)
+4. Run `./gradlew publishToMavenLocal`. The library is now installed in your local repo.
+5. Modify your app's `pom.xml` and add the dependency on this library:
 
 ```xml
 <dependency>
@@ -50,9 +54,7 @@ following dependency into your project:
 
 (or use `vaadin-core-jandex` if you're only using vaadin-core components).
 
-6. Edit the vaadin-quarkus's `application.properties` and delete all Vaadin-related
-   `.index-dependency.` lines.
-7. Run the vaadin-quarkus project - it should now start as usual.
+6. Run your vaadin-quarkus project - it should now start as usual.
 
 ## License
 
