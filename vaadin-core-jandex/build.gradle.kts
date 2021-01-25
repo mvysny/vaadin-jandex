@@ -7,6 +7,10 @@ dependencies {
             "org.webjars.bowergithub.vaadin", "org.webjars.bowergithub.webcomponents")
             .forEach { exclude(group = it) }
     }
+    compileOnly("javax.servlet:javax.servlet-api:3.1.0")
+
+    testImplementation("com.github.mvysny.dynatest:dynatest-engine:${properties["dynatest_version"]}")
+    testImplementation("org.jboss:jandex:2.2.3.Final")
 }
 
 val configureBintray = ext["configureBintray"] as (artifactId: String) -> Unit

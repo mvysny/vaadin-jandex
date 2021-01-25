@@ -3,7 +3,7 @@ import org.kordamp.gradle.plugin.jandex.tasks.JandexTask
 import java.util.*
 
 plugins {
-    java
+    kotlin("jvm") version "1.4.21"
     id("org.kordamp.gradle.jandex") version "0.9.0" apply false
     id("com.jfrog.bintray") version "1.8.3"
     `maven-publish`
@@ -23,6 +23,7 @@ allprojects {
 
 subprojects {
     apply {
+        plugin("kotlin")
         plugin("org.kordamp.gradle.jandex")
         plugin("maven-publish")
         plugin("com.jfrog.bintray")
@@ -41,6 +42,14 @@ subprojects {
     tasks.withType(JandexTask::class).configureEach {
         dependsOn(unzip)
         sources.from(File(project.buildDir, "dependencies/com/vaadin/flow"))
+    }
+
+    tasks.withType<Test> {
+        useJUnitPlatform()
+        testLogging {
+            // to see the exceptions of failed tests in Travis-CI console.
+            exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
+        }
     }
 
     // creates a reusable function which configures proper deployment to Bintray
