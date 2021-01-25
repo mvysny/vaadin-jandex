@@ -13,10 +13,16 @@ There are two artifacts built:
   (both the open-source components and the pro components such as Board, GridPro,
   CRUD etc).
 
-## How to use
+## Available on JCenter and Maven Central
+
+Browse the [vaadin-jandex on Maven Central](https://repo1.maven.org/maven2/com/github/mvysny/vaadin-jandex/)
+to see versions available. The vaadin-jandex library tracks Vaadin's release versioning;
+simply use the same vaadin-jandex as is your Vaadin version.
+
+## How to build a custom version
 
 1. git clone the project
-2. Edit `gradle.properties` and modify the Vaadin version to the version of your choice.
+2. Edit `gradle.properties` and modify the Vaadin version to the version of your choice, e.g. 14.4.6.
 3. Run `./gradlew publishToMavenLocal`. The library is now installed in your local repo.
 4. git clone https://github.com/mvysny/vaadin-quarkus
 5. Modify the vaadin-quarkus's `pom.xml` and add the dependency on this library:
