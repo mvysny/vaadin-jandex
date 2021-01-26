@@ -56,6 +56,15 @@ following dependency into your project:
 
 6. Run your vaadin-quarkus project - it should now start as usual.
 
+## Temporary
+
+This project is just temporary; the goal is to have the Jandex index merged
+into Vaadin artifacts themselves. In order to achieve that, please vote for
+the following tickets:
+
+* [Flow #9862](https://github.com/vaadin/flow/issues/9862)
+* [Components #579](https://github.com/vaadin/vaadin-flow-components/issues/579)
+
 ## License
 
 See [License](LICENSE.txt).
