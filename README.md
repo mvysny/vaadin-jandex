@@ -23,6 +23,17 @@ Browse the [vaadin-jandex on Maven Central](https://repo1.maven.org/maven2/com/g
 to see versions available. The vaadin-jandex library tracks Vaadin's release versioning;
 simply use the same vaadin-jandex as is your Vaadin version.
 
+The JCenter -> Maven Central sync has been broken lately, therefore you can find
+more releases at [vaadin-jandex on JCenter](https://jcenter.bintray.com/com/github/mvysny/vaadin-jandex/).
+You can add JCenter to your pom.xml by adding:
+
+```xml
+    <repository>
+      <id>jcenter</id>
+      <url>https://jcenter.bintray.com/</url>
+    </repository>
+```
+
 In order to add Vaadin Jandex index to your app, simply add the
 following dependency into your project:
 
