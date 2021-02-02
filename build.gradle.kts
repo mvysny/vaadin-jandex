@@ -18,6 +18,7 @@ allprojects {
 
     repositories {
         jcenter()
+        maven("https://maven.vaadin.com/vaadin-prereleases")
     }
 }
 
