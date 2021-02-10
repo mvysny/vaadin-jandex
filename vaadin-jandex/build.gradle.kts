@@ -9,6 +9,7 @@ dependencies {
     }
     compileOnly("javax.servlet:javax.servlet-api:3.1.0")
 
+    testImplementation(kotlin("stdlib-jdk8"))
     testImplementation("com.github.mvysny.dynatest:dynatest-engine:${properties["dynatest_version"]}")
     testImplementation("org.jboss:jandex:2.2.3.Final")
 }
