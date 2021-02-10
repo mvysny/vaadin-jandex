@@ -58,4 +58,21 @@ class IndexTest : DynaTest({
             initializers.filter { it.simpleName() == "DevModeInitializer" } .size
         }
     }
+
+    test("no pro components") {
+        val components: List<ClassInfo> = index
+            .getAnnotations(DotName.createSimple("com.vaadin.flow.component.dependency.NpmPackage"))
+            .filter { it.target().kind() == AnnotationTarget.Kind.CLASS }
+            .map { it.target() }
+            .filterIsInstance<ClassInfo>()
+        expect(0, components.toString()) {
+            components.filter { it.simpleName() == "Board" } .size
+        }
+        expect(0, components.toString()) {
+            components.filter { it.simpleName() == "GridPro" } .size
+        }
+        expect(0, components.toString()) {
+            components.filter { it.simpleName() == "Crud" } .size
+        }
+    }
 })
