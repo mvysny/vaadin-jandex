@@ -3,7 +3,7 @@ import org.kordamp.gradle.plugin.jandex.tasks.JandexTask
 import java.util.*
 
 plugins {
-    kotlin("jvm") version "1.4.21"
+    kotlin("jvm") version "1.4.30"
     id("org.kordamp.gradle.jandex") version "0.9.0" apply false
     id("com.jfrog.bintray") version "1.8.3"
     `maven-publish`
