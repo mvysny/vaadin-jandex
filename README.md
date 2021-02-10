@@ -76,6 +76,16 @@ the following tickets:
 * [Flow #9862](https://github.com/vaadin/flow/issues/9862)
 * [Components #579](https://github.com/vaadin/vaadin-flow-components/issues/579)
 
+## Releasing
+
+1. Edit `gradle.properties` and set `vaadin_version` to the desired version.
+2. Edit `build.gradle.kts` and remove `-SNAPSHOT` in the `version=` stanza
+3. Commit with the commit message of simply being the desired Vaadin version.
+4. git tag the commit with the same tag name as the commit message above.
+5. `git push`, `git push --tags`
+6. Run `./gradlew clean build publish` then follow the release procedure on OSSRH/MavenCentral
+7. Add the `-SNAPSHOT` back and commit and push.
+
 ## License
 
 See [License](LICENSE.txt).
