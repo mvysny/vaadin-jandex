@@ -11,7 +11,7 @@ defaultTasks("clean", "build")
 
 allprojects {
     group = "com.github.mvysny.vaadin-jandex"
-    version = "${properties["vaadin_version"]}-SNAPSHOT"
+    version = "${properties["vaadin_version"]}"
 
     repositories {
         mavenCentral()
