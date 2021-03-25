@@ -1,7 +1,7 @@
 import org.kordamp.gradle.plugin.jandex.tasks.JandexTask
 
 plugins {
-    kotlin("jvm") version "1.4.30"
+    kotlin("jvm") version "1.4.31"
     id("org.kordamp.gradle.jandex") version "0.9.0" apply false
     `maven-publish`
     signing
