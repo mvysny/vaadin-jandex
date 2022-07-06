@@ -11,7 +11,7 @@ dependencies {
 
     testImplementation(kotlin("stdlib-jdk8"))
     testImplementation("com.github.mvysny.dynatest:dynatest-engine:${properties["dynatest_version"]}")
-    testImplementation("org.jboss:jandex:2.2.3.Final")
+    testImplementation("org.jboss:jandex:2.4.3.Final")
 }
 
 val configureBintray = ext["configureBintray"] as (artifactId: String) -> Unit

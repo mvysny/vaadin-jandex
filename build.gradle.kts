@@ -1,8 +1,8 @@
 import org.kordamp.gradle.plugin.jandex.tasks.JandexTask
 
 plugins {
-    kotlin("jvm") version "1.4.31"
-    id("org.kordamp.gradle.jandex") version "0.9.0" apply false
+    kotlin("jvm") version "1.7.0"
+    id("org.kordamp.gradle.jandex") version "0.12.0" apply false
     `maven-publish`
     signing
 }
@@ -15,7 +15,6 @@ allprojects {
 
     repositories {
         mavenCentral()
-        maven("https://maven.vaadin.com/vaadin-prereleases")
     }
 }
 
@@ -29,7 +28,8 @@ subprojects {
 
     val unzip by tasks.registering(Copy::class) {
         into(File(project.buildDir, "dependencies"))
-        configurations.compileOnly.get()
+        duplicatesStrategy = DuplicatesStrategy.INCLUDE
+        configurations.compileClasspath.get()
             .files { it.group == "com.vaadin" }
             .forEach { depJar ->
                 from(zipTree(depJar))
